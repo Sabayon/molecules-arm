@@ -32,5 +32,4 @@ sudo dd if=$UBOOT of=$1 conv=fsync bs=512 seek=97
 
 sync
 
-sudo eject $1
 echo Finished.
