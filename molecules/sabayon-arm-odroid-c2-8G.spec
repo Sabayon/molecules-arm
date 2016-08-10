@@ -4,7 +4,6 @@
 
 packages_to_add:
 	app-misc/sabayon-skel,
-	net-misc/networkmanager,
 	openssh,
 	sys-apps/keyboard-configuration-helpers,
 	sys-process/vixie-cron
