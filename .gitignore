@@ -8,4 +8,5 @@ iso_rsync/*
 automatic-changelogs/*
 monthly-git-logs/*
 images/*
+!images/.keep
 bin/docker-companion
