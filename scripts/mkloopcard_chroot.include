@@ -80,3 +80,9 @@ setup_users() {
         usermod -a -G disk sabayon
     ) || return 1
 }
+
+# Clean layman dir
+rm -rf /var/lib/layman/*
+# Needed
+touch /var/lib/layman/make.conf 
+
