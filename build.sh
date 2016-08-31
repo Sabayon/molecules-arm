@@ -52,7 +52,7 @@ update_docker_companion
 update_chroot sabayon/rpi-armhfp rpi
 #update_chroot sabayon/rpi-armhfp bananapi
 update_chroot sabayon/rpi-mc-armhfp rpi-mc
-update_chroot sabayon/odroid-u2-x2-armhfp odroid-u2-x2
+update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
 update_chroot sabayon/odroid-c2-armhfp odroid-c2
 update_chroot sabayon/udooneo-armhfp udooneo
 
@@ -62,7 +62,7 @@ echo "Release ${SABAYON_RELEASE}"
 
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-u2-x2-8G.spec
+SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-x2-u2-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-udooneo-8G.spec
 #SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
