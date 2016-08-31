@@ -50,7 +50,7 @@ echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x2
 
 update_docker_companion
 update_chroot sabayon/rpi-armhfp rpi
-#update_chroot sabayon/rpi-armhfp bananapi
+update_chroot sabayon/bananapi-armhfp bananapi
 update_chroot sabayon/rpi-mc-armhfp rpi-mc
 update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
 update_chroot sabayon/odroid-c2-armhfp odroid-c2
@@ -65,4 +65,4 @@ SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-x2-u2-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-udooneo-8G.spec
-#SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
+SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
