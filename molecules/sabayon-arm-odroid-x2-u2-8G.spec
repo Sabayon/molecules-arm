@@ -2,16 +2,6 @@
 
 %env source_chroot: ${SABAYON_MOLECULE_HOME:-/sabayon}/sources/odroid-x2-u2
 
-packages_to_add:
-	app-misc/sabayon-skel,
-	net-misc/ntp,
-	net-misc/networkmanager,
-	openssh,
-	sys-apps/keyboard-configuration-helpers,
-	sys-process/vixie-cron
-
-packages_to_remove:
-
 # Release desc (the actual release description)
 release_desc: armv7l Odroid X2/U2
 
