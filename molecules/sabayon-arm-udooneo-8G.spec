@@ -2,15 +2,6 @@
 
 %env source_chroot: ${SABAYON_MOLECULE_HOME:-/sabayon}/sources/udooneo
 
-packages_to_add:
-	app-misc/sabayon-skel,
-	net-misc/networkmanager,
-	openssh,
-	sys-apps/keyboard-configuration-helpers,
-	sys-process/vixie-cron
-
-packages_to_remove:
-
 # Release desc (the actual release description)
 release_desc: armv7l Udoo Neo
 
