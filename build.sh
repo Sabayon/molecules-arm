@@ -49,6 +49,7 @@ check_python_version
 echo ':arm:M::\x7fELF\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x28\x00:\xff\xff\xff\xff\xff\xff\xff\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/bin/qemu-arm-binfmt:' > /proc/sys/fs/binfmt_misc/register || true
 
 update_docker_companion
+update_chroot sabayon/armhfp armhfp
 update_chroot sabayon/rpi-armhfp rpi
 update_chroot sabayon/bananapi-armhfp bananapi
 update_chroot sabayon/rpi-mc-armhfp rpi-mc
@@ -56,9 +57,15 @@ update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
 update_chroot sabayon/odroid-c2-armhfp odroid-c2
 #update_chroot sabayon/udooneo-armhfp udooneo
 
-export SABAYON_RELEASE="${SABAYON_RELEASE:-16}"
 
+export SABAYON_RELEASE="${SABAYON_RELEASE:-16}"
 echo "Release ${SABAYON_RELEASE}"
+
+# Doing chroot rootfs .tar.gz
+pushd sources/armhfp
+tar cpjf Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 && \
+mv Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 ../../images/
+popd
 
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
