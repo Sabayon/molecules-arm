@@ -65,7 +65,9 @@ echo "Release ${SABAYON_RELEASE}"
 pushd sources/armhfp
 tar cpjf Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 . && \
 md5sum Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2  > Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5 && \ 
-mv Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 ../../images/
+mv Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 ../../images/ && \
+mv Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5 ../../images/
+
 popd
 
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
