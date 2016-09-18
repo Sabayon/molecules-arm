@@ -63,7 +63,7 @@ echo "Release ${SABAYON_RELEASE}"
 
 # Doing chroot rootfs .tar.gz
 pushd sources/armhfp
-tar cpjf Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 && \
+tar cpjf Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 . && \
 md5sum Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2  > Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5 && \ 
 mv Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 ../../images/
 popd
