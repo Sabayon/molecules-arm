@@ -54,7 +54,7 @@ update_chroot sabayon/bananapi-armhfp bananapi
 update_chroot sabayon/rpi-mc-armhfp rpi-mc
 update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
 update_chroot sabayon/odroid-c2-armhfp odroid-c2
-update_chroot sabayon/udooneo-armhfp udooneo
+#update_chroot sabayon/udooneo-armhfp udooneo
 
 export SABAYON_RELEASE="${SABAYON_RELEASE:-16}"
 
@@ -64,5 +64,5 @@ SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-x2-u2-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-8G.spec
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-udooneo-8G.spec
+#SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-udooneo-8G.spec
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
