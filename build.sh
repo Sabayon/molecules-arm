@@ -60,7 +60,7 @@ pushd sources/armhfp
 	tar cpjf ../../images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2 .
 popd
 
-md5sum images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2  > images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5 
+md5sum images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2  > images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5
 
 # Creating image for RPI
 update_chroot sabayon/rpi-armhfp rpi
@@ -69,6 +69,14 @@ SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
 # Creating image for RPI Media Center Edition
 update_chroot sabayon/rpi-mc-armhfp rpi-mc
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
+
+# Creating image for RPI MATE
+update_chroot sabayon/rpi-mate-armhfp rpi-mate
+SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mate-8G.spec
+
+# Creating image for RPI MATE
+update_chroot sabayon/rpi-openrc-armhfp rpi-mate
+SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-openrc-8G.spec
 
 # Creating image for Odroid X2 U2 and U3
 update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
