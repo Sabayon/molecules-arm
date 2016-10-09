@@ -75,7 +75,7 @@ update_chroot sabayon/rpi-mate-armhfp rpi-mate
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mate-8G.spec
 
 # Creating image for RPI MATE
-update_chroot sabayon/rpi-openrc-armhfp rpi-mate
+update_chroot sabayon/rpi-openrc-armhfp rpi-openrc
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-openrc-8G.spec
 
 # Creating image for Odroid X2 U2 and U3
