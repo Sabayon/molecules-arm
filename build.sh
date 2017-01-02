@@ -93,6 +93,10 @@ SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-8G.spec
 update_chroot sabayon/odroid-c2-openrc-armhfp odroid-c2-openrc
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-openrc-8G.spec
 
+# Creating image for Odroid C2 OpenRC
+update_chroot sabayon/beaglebone-openrc-armhfp beaglebone-openrc
+SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-beaglebone-openrc-8G.spec
+
 # Creating image for BananaPi
 update_chroot sabayon/bananapi-armhfp bananapi
 SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
