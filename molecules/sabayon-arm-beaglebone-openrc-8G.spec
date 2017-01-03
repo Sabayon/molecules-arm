@@ -1,6 +1,6 @@
 %env %import ${SABAYON_MOLECULE_HOME:-/sabayon}/molecules/arm-base.common
 
-%env source_chroot: ${SABAYON_MOLECULE_HOME:-/sabayon}/sources/beaglebone-openrc-armhfp
+%env source_chroot: ${SABAYON_MOLECULE_HOME:-/sabayon}/sources/beaglebone-openrc
 
 packages_to_remove:
 
