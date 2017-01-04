@@ -1,6 +1,19 @@
 #!/bin/bash
 set -e
 
+IMAGES_ID=(
+  "rpi"
+  "rpi-mc"
+  "rpi-mate"
+  "rpi-openrc"
+  "odroid-x2-u2"
+  "odroid-c2"
+  "odroid-c2-openrc"
+  "beaglebone-openrc"
+  "bananapi"
+)
+
+
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
    exit 1
@@ -54,6 +67,8 @@ echo "Building up Release ${SABAYON_RELEASE}"
 
 update_docker_companion
 
+#Generate armhfp images
+
 update_chroot sabayon/armhfp armhfp
 # Doing chroot rootfs .tar.gz
 pushd sources/armhfp
@@ -62,41 +77,8 @@ popd
 
 md5sum images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2  > images/Sabayon_Linux_${SABAYON_RELEASE}_armv7l.tar.bz2.md5
 
-# Creating image for RPI
-update_chroot sabayon/rpi-armhfp rpi
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-8G.spec
-
-# Creating image for RPI Media Center Edition
-update_chroot sabayon/rpi-mc-armhfp rpi-mc
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mc-8G.spec
-
-# Creating image for RPI MATE
-update_chroot sabayon/rpi-mate-armhfp rpi-mate
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-mate-8G.spec
-
-# Creating image for RPI MATE
-update_chroot sabayon/rpi-openrc-armhfp rpi-openrc
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-rpi-openrc-8G.spec
-
-# Creating image for Odroid X2 U2 and U3
-update_chroot sabayon/odroid-x2-u2-armhfp odroid-x2-u2
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-x2-u2-8G.spec
-
-# Creating image for Odroid C2
-update_chroot sabayon/odroid-c2-armhfp odroid-c2
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-8G.spec
-
-#update_chroot sabayon/udooneo-armhfp udooneo
-#SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-udooneo-8G.spec
-
-# Creating image for Odroid C2 OpenRC
-update_chroot sabayon/odroid-c2-openrc-armhfp odroid-c2-openrc
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-odroid-c2-openrc-8G.spec
-
-# Creating image for Odroid C2 OpenRC
-update_chroot sabayon/beaglebone-openrc-armhfp beaglebone-openrc
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-beaglebone-openrc-8G.spec
-
-# Creating image for BananaPi
-update_chroot sabayon/bananapi-armhfp bananapi
-SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-bananapi-8G.spec
+for image_name in "${IMAGES_ID[@]}" ; do
+  echo "Building $image_name"
+  update_chroot sabayon/$image_name-armhfp $image_name
+  SABAYON_MOLECULE_HOME=$(pwd) molecule molecules/sabayon-arm-$image_name-8G.spec
+done
